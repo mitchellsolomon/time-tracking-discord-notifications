@@ -8,3 +8,10 @@ nbactions.xml
 nb-configuration.xml
 nbproject/
 *.class
+.DS_Store
+
+# notification server
+.env
+*.sqlite3
+__pycache__/
+*.pyc

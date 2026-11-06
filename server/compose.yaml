@@ -1,0 +1,15 @@
+services:
+  time-tracking-discord:
+    build: .
+    container_name: time-tracking-discord
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${BIND_IP:-127.0.0.1}:8787:8787" # Explicitly choose private LAN or Tailscale IP
+    volumes:
+      - time-tracking-data:/data
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  time-tracking-data:
